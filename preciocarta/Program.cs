@@ -19,6 +19,8 @@ namespace preciocarta
         Costo: $0.56 
          */
 
+            Console.WriteLine("LCS System");
+            Console.WriteLine("Ingrese los gramos de la carta");
             double preciocomun = 0.22;
             double impuesto = 0.17;
             int peso;
