@@ -19,41 +19,52 @@ namespace preciocarta
         Costo: $0.56 
          */
 
-            Console.WriteLine("LCS System");
-            Console.WriteLine("Ingrese los gramos de la carta");
-            double preciocomun = 0.22;
-            double impuesto = 0.17;
-            int peso;
-            Console.WriteLine("Ingrese los gramos de la carta");
-            peso = Convert.ToInt32(Console.ReadLine());
-
-            if (peso <= 100)
+            bool salir = false;
+            string otravez;
+            while (salir != true)
             {
 
-                Console.WriteLine("El precio por enviar su carta es de: " + preciocomun);
+
+
+
+
+                Console.WriteLine("LCS System \n \n");
+
+                double preciocomun = 0.22;
+                double impuesto = 0.17;
+                int peso;
+                Console.WriteLine("Ingrese los gramos de la carta");
+                peso = Convert.ToInt32(Console.ReadLine());
+
+                if (peso <= 100)
+                {
+
+                    Console.WriteLine("El precio por enviar su carta es de: " + preciocomun);
+                }
+
+
+                else
+                {
+                    int pesoadicional = peso - 100;
+                    double impuestoextra = (pesoadicional / 100) * impuesto;
+                    double costoTotal = 0.22 + impuestoextra;
+                    Console.WriteLine("El envío sale $" + costoTotal);
+                   
+                }
+
+
+
+
+
+                Console.WriteLine("Desea ingresar otro año s/n");
+                otravez = Console.ReadLine().ToLower();
+                if (otravez == "n")
+                {
+                    salir = true;
+                }
             }
 
-
-            else
-            {
-                int pesoadicional = peso - 100;
-                double impuestoextra = (pesoadicional / 100) * impuesto;
-                double costoTotal = 0.22 + impuestoextra;
-                Console.WriteLine("El envío sale $" + costoTotal);
-                Console.ReadKey();
-            }
-           
-
-            
-
-
-            
-
-                
-                
-            
-
-
+        
 
 
         }
